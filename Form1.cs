@@ -10,11 +10,30 @@ using System.Windows.Forms;
 
 namespace gestioin_frais_academiques
 {
-    public partial class Form1 : Form
+    public partial class welcome : Form
     {
-        public Form1()
+        public welcome()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // on affiche la deuxieme page
+            inscription inscr = new inscription(); // on cree une instance 
+            inscr.Show(); // puis on fait la methode show() pour afficher le formulaire
+           this.Hide(); // et on ferme l'actuel
+            
         }
     }
 }
