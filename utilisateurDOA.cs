@@ -46,55 +46,47 @@ namespace gestioin_frais_academiques
             // récupérer la connexion
             SqlConnection con = db.GetConnexion();
 
-            // requête SQL pour insérer un utilisateur
-            string req = "INSERT INTO utilisateurs(nom,fonction,mot_de_passe) VALUES(@nom,@fonction,@mdp)";
+            string req = "INSERT INTO utilisateurs(nom,fonction,mot_de_passe,role) VALUES(@nom,@fonction,@mdp,@role)";
 
-            // création de la commande SQL
             SqlCommand cmd = new SqlCommand(req, con);
 
-            // passer les valeurs à la requête
             cmd.Parameters.AddWithValue("@nom", u.Nom);
             cmd.Parameters.AddWithValue("@fonction", u.Fonction);
             cmd.Parameters.AddWithValue("@mdp", u.MotDePasse);
+            cmd.Parameters.AddWithValue("@role", u.Role);
 
-            // ouvrir la connexion
             con.Open();
-
-            // exécuter la commande
             cmd.ExecuteNonQuery();
-
-            // fermer la connexion
             con.Close();
         }
 
         // méthode qui vérifie si les informations de connexion sont correctes
-        public bool AuthentifierUtilisateur(string nom, string fonction, string motdepasse)
+    public string AuthentifierUtilisateur(string nom, string fonction, string motdepasse)
         {
-            // récupérer la connexion à la base de données
             SqlConnection con = db.GetConnexion();
 
-            // requête SQL pour vérifier si un utilisateur existe avec ces informations
-            string req = "SELECT COUNT(*) FROM utilisateurs WHERE nom=@nom AND fonction=@fonction AND mot_de_passe=@mdp";
+            // requête pour récupérer le rôle
+            string req = "SELECT role FROM utilisateurs WHERE nom=@nom AND fonction=@fonction AND mot_de_passe=@mdp";
 
-            // créer la commande SQL
             SqlCommand cmd = new SqlCommand(req, con);
 
-            // ajouter les paramètres pour sécuriser la requête
             cmd.Parameters.AddWithValue("@nom", nom);
             cmd.Parameters.AddWithValue("@fonction", fonction);
             cmd.Parameters.AddWithValue("@mdp", motdepasse);
 
-            // ouvrir la connexion à la base de données
             con.Open();
 
-            // ExecuteScalar retourne la première valeur (ici le nombre d'utilisateurs trouvés)
-            int count = (int)cmd.ExecuteScalar();
+            // récupérer le rôle
+            object result = cmd.ExecuteScalar();
 
-            // fermer la connexion
             con.Close();
 
-            // si count > 0 alors l'utilisateur existe
-            return count > 0;
+            if (result != null)
+            {
+                return result.ToString();
+            }
+
+            return null;
         }
     }
 }
