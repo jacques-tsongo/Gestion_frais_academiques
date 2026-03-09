@@ -17,6 +17,7 @@ namespace gestioin_frais_academiques
             InitializeComponent();
         }
 
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -41,19 +42,43 @@ namespace gestioin_frais_academiques
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (fonction.Text == "caissier")
+            // récupérer les valeurs des champs du formulaire
+            string Nom = nom.Text;
+            string Fonction = fonction.Text;
+            string Password = password.Text;
+
+            utilisateurDOA dao = new utilisateurDOA();
+
+            // récupérer le rôle
+            string role = dao.AuthentifierUtilisateur(Nom, Fonction, Password);
+
+            if (role == "admin")
             {
-                MessageBox.Show("c'est le caissier qui es connecte");
+                MessageBox.Show("Bienvenue Administrateur");
             }
-            else if( fonction.Text == "comptable")
+
+            else if (role == "caissier")  // si la personne connectee est caissier alors on ouvre le formulaire a rapport avec le caissier
             {
-                MessageBox.Show("c'est l'administrateur qui es connecter");
+                //MessageBox.Show("Bienvenue Caissier");
+                addPaiement addpaie = new addPaiement();
+                addpaie.Show();
+                this.Close();
+            }
+
+            else
+            {
+                MessageBox.Show("Informations incorrectes !");
             }
         }
 
         private void fonction_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            password.PasswordChar = '*';
         }
     }
 }
