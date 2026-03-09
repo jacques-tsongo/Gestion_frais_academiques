@@ -9,14 +9,11 @@ namespace gestioin_frais_academiques
 {
     internal class connexionDB
     {
-        private SqlConnection con;
+        private string chaine = @"Data Source=.;Initial Catalog=gestion_frais;Integrated Security=True";
 
-        public SqlConnection GetConnexion()
+        public SqlConnection GetConnexion()  
         {
-            string chaine = @"Data Source=.;Initial Catalog=gestion_frais;Integrated Security=True";
-
-            con = new SqlConnection(chaine);
-
+            SqlConnection con = new SqlConnection(chaine);
             return con;
         }
 
