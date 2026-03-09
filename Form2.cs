@@ -21,6 +21,18 @@ namespace gestioin_frais_academiques
         {
 
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
+            this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

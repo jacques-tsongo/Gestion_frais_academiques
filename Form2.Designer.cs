@@ -31,12 +31,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.nom = new System.Windows.Forms.TextBox();
-            this.fonction = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.create_account = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.fonction = new System.Windows.Forms.TextBox();
+            this.nom = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +55,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(159, 39);
+            this.label2.Location = new System.Drawing.Point(160, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 24);
             this.label2.TabIndex = 1;
@@ -61,6 +63,10 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Snow;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.create_account);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.fonction);
@@ -75,59 +81,84 @@
             this.panel1.Size = new System.Drawing.Size(776, 362);
             this.panel1.TabIndex = 2;
             // 
-            // label3
+            // label6
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(159, 196);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(313, 24);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Ajouter un mot de passe de sécurité";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label6.AutoSize = true;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Blue;
+            this.label6.Location = new System.Drawing.Point(578, 330);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 18);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Connexion";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // label4
+            // label5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(159, 122);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(190, 24);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Donner votre fonction";
-            // 
-            // nom
-            // 
-            this.nom.Location = new System.Drawing.Point(163, 81);
-            this.nom.Name = "nom";
-            this.nom.ShortcutsEnabled = false;
-            this.nom.Size = new System.Drawing.Size(384, 29);
-            this.nom.TabIndex = 4;
-            // 
-            // fonction
-            // 
-            this.fonction.Location = new System.Drawing.Point(163, 151);
-            this.fonction.Name = "fonction";
-            this.fonction.ShortcutsEnabled = false;
-            this.fonction.Size = new System.Drawing.Size(384, 29);
-            this.fonction.TabIndex = 5;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(163, 240);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ShortcutsEnabled = false;
-            this.textBox1.Size = new System.Drawing.Size(384, 29);
-            this.textBox1.TabIndex = 6;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.RosyBrown;
+            this.label5.Location = new System.Drawing.Point(309, 330);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(270, 20);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Connectez-vous avec votre compte ?";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // create_account
             // 
             this.create_account.BackColor = System.Drawing.Color.Blue;
             this.create_account.ForeColor = System.Drawing.Color.White;
-            this.create_account.Location = new System.Drawing.Point(376, 286);
+            this.create_account.Location = new System.Drawing.Point(377, 264);
             this.create_account.Name = "create_account";
             this.create_account.Size = new System.Drawing.Size(171, 50);
             this.create_account.TabIndex = 7;
             this.create_account.Text = "Créer un compte";
             this.create_account.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(164, 218);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ShortcutsEnabled = false;
+            this.textBox1.Size = new System.Drawing.Size(384, 29);
+            this.textBox1.TabIndex = 6;
+            // 
+            // fonction
+            // 
+            this.fonction.Location = new System.Drawing.Point(164, 129);
+            this.fonction.Name = "fonction";
+            this.fonction.ShortcutsEnabled = false;
+            this.fonction.Size = new System.Drawing.Size(384, 29);
+            this.fonction.TabIndex = 5;
+            // 
+            // nom
+            // 
+            this.nom.Location = new System.Drawing.Point(164, 59);
+            this.nom.Name = "nom";
+            this.nom.ShortcutsEnabled = false;
+            this.nom.Size = new System.Drawing.Size(384, 29);
+            this.nom.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(160, 100);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(190, 24);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Donner votre fonction";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(160, 174);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(313, 24);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Ajouter un mot de passe de sécurité";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // inscription
             // 
@@ -156,5 +187,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox fonction;
         private System.Windows.Forms.Button create_account;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
