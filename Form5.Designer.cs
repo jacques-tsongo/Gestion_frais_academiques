@@ -83,9 +83,9 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.noms);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(54, 36);
+            this.panel1.Location = new System.Drawing.Point(22, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(671, 382);
+            this.panel1.Size = new System.Drawing.Size(757, 426);
             this.panel1.TabIndex = 2;
             // 
             // matricule
@@ -201,6 +201,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "paiement";
             this.Text = "Paiement";
+            this.Load += new System.EventHandler(this.paiement_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

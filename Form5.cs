@@ -21,5 +21,12 @@ namespace gestioin_frais_academiques
         {
 
         }
+
+        private void paiement_Load(object sender, EventArgs e)
+        {
+            // ajout des items dans le combobox devise
+            devise.Items.Add("fc");
+            devise.Items.Add("$");
+        }
     }
 }
