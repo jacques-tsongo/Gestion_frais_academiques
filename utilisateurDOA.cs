@@ -66,5 +66,35 @@ namespace gestioin_frais_academiques
             // fermer la connexion
             con.Close();
         }
+
+        // méthode qui vérifie si les informations de connexion sont correctes
+        public bool AuthentifierUtilisateur(string nom, string fonction, string motdepasse)
+        {
+            // récupérer la connexion à la base de données
+            SqlConnection con = db.GetConnexion();
+
+            // requête SQL pour vérifier si un utilisateur existe avec ces informations
+            string req = "SELECT COUNT(*) FROM utilisateurs WHERE nom=@nom AND fonction=@fonction AND mot_de_passe=@mdp";
+
+            // créer la commande SQL
+            SqlCommand cmd = new SqlCommand(req, con);
+
+            // ajouter les paramètres pour sécuriser la requête
+            cmd.Parameters.AddWithValue("@nom", nom);
+            cmd.Parameters.AddWithValue("@fonction", fonction);
+            cmd.Parameters.AddWithValue("@mdp", motdepasse);
+
+            // ouvrir la connexion à la base de données
+            con.Open();
+
+            // ExecuteScalar retourne la première valeur (ici le nombre d'utilisateurs trouvés)
+            int count = (int)cmd.ExecuteScalar();
+
+            // fermer la connexion
+            con.Close();
+
+            // si count > 0 alors l'utilisateur existe
+            return count > 0;
+        }
     }
 }
