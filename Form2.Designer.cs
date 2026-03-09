@@ -34,7 +34,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.create_account = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.password = new System.Windows.Forms.TextBox();
             this.fonction = new System.Windows.Forms.TextBox();
             this.nom = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.create_account);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.password);
             this.panel1.Controls.Add(this.fonction);
             this.panel1.Controls.Add(this.nom);
             this.panel1.Controls.Add(this.label4);
@@ -116,14 +116,15 @@
             this.create_account.TabIndex = 7;
             this.create_account.Text = "Créer un compte";
             this.create_account.UseVisualStyleBackColor = false;
+            this.create_account.Click += new System.EventHandler(this.create_account_Click);
             // 
-            // textBox1
+            // password
             // 
-            this.textBox1.Location = new System.Drawing.Point(164, 218);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ShortcutsEnabled = false;
-            this.textBox1.Size = new System.Drawing.Size(384, 29);
-            this.textBox1.TabIndex = 6;
+            this.password.Location = new System.Drawing.Point(164, 218);
+            this.password.Name = "password";
+            this.password.ShortcutsEnabled = false;
+            this.password.Size = new System.Drawing.Size(384, 29);
+            this.password.TabIndex = 6;
             // 
             // fonction
             // 
@@ -184,7 +185,7 @@
         private System.Windows.Forms.TextBox nom;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.TextBox fonction;
         private System.Windows.Forms.Button create_account;
         private System.Windows.Forms.Label label5;
