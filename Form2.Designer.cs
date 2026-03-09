@@ -39,6 +39,7 @@
             this.nom = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.cmbRole = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +66,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Snow;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.Controls.Add(this.cmbRole);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.create_account);
@@ -164,6 +166,14 @@
             this.label3.Text = "Ajouter un mot de passe de sécurité";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // cmbRole
+            // 
+            this.cmbRole.FormattingEnabled = true;
+            this.cmbRole.Location = new System.Drawing.Point(164, 272);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(198, 32);
+            this.cmbRole.TabIndex = 10;
+            // 
             // inscription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,6 +183,7 @@
             this.Controls.Add(this.label1);
             this.Name = "inscription";
             this.Text = "inscription";
+            this.Load += new System.EventHandler(this.inscription_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -193,5 +204,6 @@
         private System.Windows.Forms.Button create_account;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbRole;
     }
 }

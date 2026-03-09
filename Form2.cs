@@ -47,6 +47,7 @@ namespace gestioin_frais_academiques
             u.Nom = nom.Text;
             u.Fonction = fonction.Text;
             u.MotDePasse = password.Text;
+            u.Role = cmbRole.Text;
 
             // créer l'objet DAO
             utilisateurDOA dao = new utilisateurDOA();
@@ -72,6 +73,14 @@ namespace gestioin_frais_academiques
 
             // cacher la page inscription
             this.Close();
+        }
+
+        private void inscription_Load(object sender, EventArgs e)
+        {
+            password.PasswordChar = '*';
+            // ajouter les roles dans le combobox
+            cmbRole.Items.Add("admin");
+            cmbRole.Items.Add("caissier");
         }
     }
 
