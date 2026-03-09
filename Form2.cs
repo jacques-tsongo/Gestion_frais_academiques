@@ -40,25 +40,38 @@ namespace gestioin_frais_academiques
 
         private void create_account_Click(object sender, EventArgs e)
         {
-            try
+            // créer un objet utilisateur
+            utilisateur u = new utilisateur();
+
+            // récupérer les valeurs des champs du formulaire
+            u.Nom = nom.Text;
+            u.Fonction = fonction.Text;
+            u.MotDePasse = password.Text;
+
+            // créer l'objet DAO
+            utilisateurDOA dao = new utilisateurDOA();
+
+            // vérifier si l'utilisateur existe déjà
+            if (dao.UtilisateurExiste(u.Fonction))
             {
-                utilisateur u = new utilisateur();
-
-                u.Nom = nom.Text;
-                u.Fonction = fonction.Text;
-                u.MotDePasse = password.Text;
-
-                utilisateurDOA dao = new utilisateurDOA();
-                dao.AjouterUtilisateur(u);
-
-                MessageBox.Show("Compte créé avec succès");
-
-
+                // message si le compte existe déjà
+                MessageBox.Show("Ce compte existe déjà !");
+                return;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
+            // ajouter l'utilisateur dans la base
+            dao.AjouterUtilisateur(u);
+
+            // message de succès
+            MessageBox.Show("Compte créé avec succès");
+
+            // ouvrir la page principale
+            addPaiement accueil = new addPaiement();
+
+            accueil.Show();
+
+            // cacher la page inscription
+            this.Close();
         }
     }
 

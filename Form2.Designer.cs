@@ -120,6 +120,7 @@
             // 
             // password
             // 
+            this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.Location = new System.Drawing.Point(164, 218);
             this.password.Name = "password";
             this.password.ShortcutsEnabled = false;
@@ -128,6 +129,7 @@
             // 
             // fonction
             // 
+            this.fonction.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fonction.Location = new System.Drawing.Point(164, 129);
             this.fonction.Name = "fonction";
             this.fonction.ShortcutsEnabled = false;
@@ -136,6 +138,7 @@
             // 
             // nom
             // 
+            this.nom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nom.Location = new System.Drawing.Point(164, 59);
             this.nom.Name = "nom";
             this.nom.ShortcutsEnabled = false;
