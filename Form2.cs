@@ -42,22 +42,16 @@ namespace gestioin_frais_academiques
         {
             try
             {
-                con = db.GetConnexion();
+                utilisateur u = new utilisateur();
 
-                con.Open();
+                u.Nom = nom.Text;
+                u.Fonction = fonction.Text;
+                u.MotDePasse = password.Text;
 
-                SqlCommand cmd = new SqlCommand(
-                "INSERT INTO utilisateurs(nom,fonction,mot_de_passe) VALUES(@nom,@fonction,@password)", con);
+                utilisateurDOA dao = new utilisateurDOA();
+                dao.AjouterUtilisateur(u);
 
-                cmd.Parameters.AddWithValue("@nom", nom.Text);
-                cmd.Parameters.AddWithValue("@fonction", fonction.Text);
-                cmd.Parameters.AddWithValue("@password", password.Text);
-
-                cmd.ExecuteNonQuery();
-
-                con.Close();
-
-                MessageBox.Show("Compte créé avec succès !");
+                MessageBox.Show("Compte créé avec succès");
 
 
             }
