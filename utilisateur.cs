@@ -19,5 +19,8 @@ namespace gestioin_frais_academiques
 
         // Propriété pour le mot de passe
         public string MotDePasse { get; set; }
+
+        // rôle de l'utilisateur (admin ou caissier)
+        public string Role { get; set; }
     }
 }
