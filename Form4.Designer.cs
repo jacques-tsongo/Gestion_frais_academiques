@@ -52,6 +52,7 @@
             this.ajouterUnPaiementToolStripMenuItem.Name = "ajouterUnPaiementToolStripMenuItem";
             this.ajouterUnPaiementToolStripMenuItem.Size = new System.Drawing.Size(201, 29);
             this.ajouterUnPaiementToolStripMenuItem.Text = "Ajouter un paiement";
+            this.ajouterUnPaiementToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnPaiementToolStripMenuItem_Click);
             // 
             // voirLhistoriqueDesPaiementsToolStripMenuItem
             // 
@@ -59,6 +60,7 @@
             this.voirLhistoriqueDesPaiementsToolStripMenuItem.Name = "voirLhistoriqueDesPaiementsToolStripMenuItem";
             this.voirLhistoriqueDesPaiementsToolStripMenuItem.Size = new System.Drawing.Size(287, 29);
             this.voirLhistoriqueDesPaiementsToolStripMenuItem.Text = "Voir l\'historique des paiements";
+            this.voirLhistoriqueDesPaiementsToolStripMenuItem.Click += new System.EventHandler(this.voirLhistoriqueDesPaiementsToolStripMenuItem_Click);
             // 
             // main_contents
             // 
@@ -82,6 +84,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "addPaiement";
             this.Text = "Ajout des paiements";
+            this.Load += new System.EventHandler(this.addPaiement_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
