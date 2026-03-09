@@ -8,9 +8,16 @@ namespace gestioin_frais_academiques
 {
     internal class utilisateur
     {
-            public int IdUser { get; set; }
-            public string Nom { get; set; }
-            public string Fonction { get; set; }
-            public string MotDePasse { get; set; }
+        // Propriété pour l'identifiant de l'utilisateur
+        public int IdUser { get; set; }
+
+        // Propriété pour le nom
+        public string Nom { get; set; }
+
+        // Propriété pour la fonction (admin, caissier...)
+        public string Fonction { get; set; }
+
+        // Propriété pour le mot de passe
+        public string MotDePasse { get; set; }
     }
 }
