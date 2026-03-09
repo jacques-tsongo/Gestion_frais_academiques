@@ -30,8 +30,8 @@ namespace gestioin_frais_academiques
         private void button1_Click(object sender, EventArgs e)
         {
             // on affiche la deuxieme page
-            inscription inscr = new inscription(); // on cree une instance 
-            inscr.Show(); // puis on fait la methode show() pour afficher le formulaire
+            Form3 form = new Form3(); // on cree une instance 
+            form.Show(); // puis on fait la methode show() pour afficher le formulaire
            this.Hide(); // et on ferme l'actuel
             
         }
